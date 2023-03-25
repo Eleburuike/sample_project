@@ -36,3 +36,14 @@ dynamic function(String string){
   return good;
 
 }
+
+String splitIntoFour(String str){
+  var result = StringBuffer();
+  var cursor = 0;
+  while (cursor + 4 < str.length){
+    result..write(str.substring(cursor, cursor + 4))..write("-");
+    cursor += 4;
+  }
+  result.write(str.substring((cursor)));
+  return result.toString();
+}
