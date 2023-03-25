@@ -30,9 +30,22 @@ List<dynamic> set = [1, 1.2, true, 'ght'];
   print(function); */
   var let = function('tg.if.ze.ro');
   print(let);
+
+  var yes = splitIntoFour('123fgtr5678');
+  print(yes);
 }  
 dynamic function(String string){
   var good = string.split('.').join('').replaceRange(4, 4, '-');
   return good;
+}
 
+String splitIntoFour(String str){
+  var result = StringBuffer();
+  var cursor = 0;
+  while (cursor + 4 < str.length){
+    result..write(str.substring(cursor, cursor + 4))..write("-");
+    cursor += 4;
+  }
+  result.write(str.substring((cursor)));
+  return result.toString();
 }
